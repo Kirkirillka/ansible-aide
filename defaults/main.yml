@@ -41,7 +41,7 @@ aide_cron_sched_hr: "1"                                                        #
 aide_cron_sched_day: "*"                                                       #day
 aide_cron_sched_mon: "*"                                                       #month
 aide_cron_sched_wkd: "*"                                                       #weekday
-aide_rules:
+aide_default_rules:
   - name: "FIPSR Rule"
     rule: "FIPSR"
 #    comment: Example Rule Comment
@@ -167,3 +167,5 @@ aide_rules:
       - "/var/log/sa"
       - "/var/log/aide.log"
       - "/var/log/and-httpd"
+aide_extra_rules: []
+aide_rules: "{{ aide_default_rules + aide_extra_rules }}"
