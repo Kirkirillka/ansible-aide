@@ -52,7 +52,7 @@
     day: "{{ aide_cron_sched_day }}"
     month: "{{ aide_cron_sched_mon }}"
     weekday: "{{ aide_cron_sched_wkd }}"
-    job: "{{ aide_path.stdout }} --check"
+    job: "{{ aide_path.stdout }} --check -c {{ aide_conf_path }}"
   when:
     - "aide_cron_email_notify_recipients | length < 1"
     - "aide_cron_schedule_check"
