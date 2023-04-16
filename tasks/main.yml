@@ -2,8 +2,8 @@
 - name: "Ensure aide is installed"
   package:
     name: "{{ aide_pkg }}"
-    state: "installed"
-  retries: "3"
+    state: "present"
+  retries: 3
   register: "aide_installed"
   until: "aide_installed is succeeded"
 
